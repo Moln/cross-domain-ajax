@@ -26,7 +26,7 @@ module.exports = {
             title: 'Cross proxy',
             filename: 'cross-proxy.html',
             minify: {
-                minifyJS: { ie8:true, parse: { bare_returns: undefined } }
+                minifyJS: { ie8:true}
             },
             inlineSource: '.(js|css)$',
             chunks: ["demo-proxy"]
