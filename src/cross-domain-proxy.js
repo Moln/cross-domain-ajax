@@ -60,12 +60,12 @@ var onVerifyOrigin = function (cb) {
 
 pm.bind('cross-ajax', function (params) {
     verifyOrigin(params.origin);
-
+    console.log('verifyOrigin', verifyOrigin);
     var data = params.data;
 
     ajax(extend(data, {
         headers: {
-            'X-Referrer': document.referrer
+            'X-Referer': document.referrer
         },
         success: function (data, request) {
             setResponseJson(request);

@@ -17,15 +17,15 @@ var cajax = new CrossAjax('http://127.0.0.2:8080/cross-proxy.html');
 // });
 cajax.ready(function () {
     cajax.ajax({
-        url: 'package.json',
+        url: 'index.html',
         success: function (data, req) {
-            console.log(data, req);
+            console.log("success", data, req);
         },
         error: function () {
-            console.log(arguments);
+            console.log("error", arguments);
         },
         complete: function () {
-            console.log(arguments);
+            console.log("complete", arguments);
         }
     });
 });

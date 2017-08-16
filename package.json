@@ -1,13 +1,13 @@
 {
   "name": "@moln/cross-domain-ajax",
-  "version": "1.0.0",
-  "description": "Cross domain AJAX use by postmessage, for IE6/7/8. 使用 postmessage 处理IE 6/7/8 AJAX跨域问题.",
+  "version": "0.1.0",
+  "description": "Cross domain AJAX via window.postmessage, for IE6/7/8. 使用 postmessage 解决IE 6/7/8 AJAX跨域问题.",
   "main": "./src/index.js",
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server --host 0.0.0.0"
+    "start": "webpack-dev-server --host 0.0.0.0 --inline --hot"
   },
-  "author": "",
+  "author": "Moln <moln.xie@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "html-webpack-inline-source-plugin": "0.0.9",
