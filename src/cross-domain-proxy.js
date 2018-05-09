@@ -41,16 +41,6 @@ var serializeScale = function (obj) {
 
     return result;
 };
-var setResponseJson = function (request) {
-    var cType;
-    if (cType = request.getResponseHeader('Content-Type')) {
-        //application/json; charset=utf-8
-        //application/hal+json
-        if (/application\/([\w\b]*)json([\w\b]*)/.test(cType)) {
-            request.responseJSON = window.JSON.parse(request.responseText);
-        }
-    }
-};
 
 var verifyOrigin = function () {};
 
@@ -67,7 +57,6 @@ pm.bind('cross-ajax', function (params) {
             'X-Referer': document.referrer
         },
         success: function (data, request) {
-            setResponseJson(request);
             pm.send({
                 target: window.parent,
                 type: 'cross-ajax.success',
@@ -75,7 +64,6 @@ pm.bind('cross-ajax', function (params) {
             });
         },
         error: function (request) {
-            setResponseJson(request);
             pm.send({
                 target: window.parent,
                 type: 'cross-ajax.error',
@@ -83,7 +71,6 @@ pm.bind('cross-ajax', function (params) {
             });
         },
         complete: function (request) {
-            setResponseJson(request);
             var result = request.status >= 200 && request.status < 300 ? 'success' : 'error';
             params.callback(result, serializeScale(request));
             pm.send({

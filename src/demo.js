@@ -17,7 +17,7 @@ var cajax = new CrossAjax('http://127.0.0.2:8080/cross-proxy.html');
 // });
 cajax.ready(function () {
     cajax.ajax({
-        url: 'index.html',
+        url: 'test.json',
         success: function (data, req) {
             console.log("success", data, req);
         },
