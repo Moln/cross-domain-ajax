@@ -1,6 +1,6 @@
 {
   "name": "@moln/cross-domain-ajax",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Cross domain AJAX via window.postmessage, for IE6/7/8. 使用 postmessage 解决IE 6/7/8 AJAX跨域问题.",
   "main": "./src/cross-domain-ajax.js",
   "scripts": {
