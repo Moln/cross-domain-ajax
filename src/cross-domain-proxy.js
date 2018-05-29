@@ -53,9 +53,9 @@ pm.bind('cross-ajax', function (params) {
     var data = params.data;
 
     ajax(extend(data, {
-        headers: {
+        headers: extend(data.headers || {}, {
             'X-Referer': document.referrer
-        },
+        }),
         success: function (data, request) {
             pm.send({
                 target: window.parent,
